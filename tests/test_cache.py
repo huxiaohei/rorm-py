@@ -99,6 +99,7 @@ class TestCache(unittest.IsolatedAsyncioTestCase):
         await client.close()
 
     async def test_load_data(self):
+        await self.test_save_data()
         client = await Redis.from_url('redis://localhost:6379/0')
         player = Player(client, 10001)
         await player.load()
@@ -110,11 +111,26 @@ class TestCache(unittest.IsolatedAsyncioTestCase):
         print(player.model_dump_json())
 
     async def test_update_data(self):
+        await self.test_save_data()
         client = await Redis.from_url('redis://localhost:6379/0')
+
         player = Player(client, 10001)
         await player.load()
+
         player.role.role_level = 2
         await player.save()
-        player.role.role_level = 3
-        await player.save()
-        await client.close()
+
+        player2 = Player(client, 10001)
+        await player2.load()
+        assert player2.role.role_level == 2
+
+        player2.mails.pop()
+        await player2.save()
+
+        player3 = Player(client, 10001)
+        await player3.load()
+        assert len(player3.mails) == 4
+
+        player3.items.pop('3')
+        await player3.save()
+        assert len(player3.items) == 4
