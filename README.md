@@ -13,11 +13,23 @@
 * 在调用`ORMCache`对象的`save_all`方法时，会将`ORMCache`实例中的所有`ORMModel`的实例保存到`redis`中
   * `ORMModel`实现的标脏检查，只有数据发生变化时才会序列化并保存，因此不用担心序列化性能和访问`redis`过于频繁的问题
 
-## Example
+## 安装与使用
+
+### 安装
+
+```shell
+pip install rorm-py
+```
 
 ### 定义ORMModel和ORMCache
 
 ```python
+
+from pydantic import Field
+from redis.asyncio import Redis
+from rorm.orm_model import ORMModel
+from rorm.orm_cache import ORMCache
+
 @ORMCache.register
 class RoleInfo(ORMModel):
     role_id: int = Field(0, title="角色id")

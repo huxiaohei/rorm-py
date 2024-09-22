@@ -1,13 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="rorm",
+    name="rorm-py",
     version="1.0.0",
     author="刘虎",
     author_email="huxiaoheigame@gmail.com",
     description="A simple ORM cache library for redis",
     long_description=open('README.md').read(),
-    long_description_content_type="markdown",
+    long_description_content_type="text/markdown",
     url="https://github.com/huxiaohei/rorm-py",  # 项目的主页
     packages=find_packages(),
     classifiers=[
