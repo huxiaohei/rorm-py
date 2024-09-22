@@ -1,13 +1,10 @@
 # -*- coding= utf-8 -*-
 
-__time__ = "2024/07/30"
-__author__ = "虎小黑"
-
 import unittest
 from pydantic import Field
 from redis.asyncio import Redis
-from orm.orm_model import ORMModel
-from orm.orm_cache import ORMCache
+from rorm.orm_model import ORMModel
+from rorm.orm_cache import ORMCache
 
 
 @ORMCache.register

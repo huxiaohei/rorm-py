@@ -1,9 +1,5 @@
 # -*- coding= utf-8 -*-
 
-__time__ = "2024/07/29"
-__author__ = "虎小黑"
-
-
 from typing import Any, Self
 from pydantic import BaseModel
 

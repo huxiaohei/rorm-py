@@ -1,3 +1,6 @@
-.vscode
-.venv
+**/.vscode
+**/.venv
+**/build
+**/dist
+*.egg-info
 *.pyc

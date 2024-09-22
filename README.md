@@ -215,3 +215,7 @@ async def test_delete(self):
 15) "mails:MailInfo:5"
 16) "{\"mail_id\":5,\"mail_title\":\"mail-5\",\"mail_content\":\"modify\",\"attarchments\":[{\"item_id\":5,\"item_name\":\"item-5\",\"item_count\":6}]}"
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

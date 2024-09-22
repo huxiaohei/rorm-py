@@ -1,2 +1,6 @@
+annotated-types==0.7.0
 pydantic==2.8.2
+pydantic_core==2.20.1
 redis==5.0.7
+setuptools==75.1.0
+typing_extensions==4.12.2

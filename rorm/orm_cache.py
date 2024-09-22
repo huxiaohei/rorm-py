@@ -1,13 +1,9 @@
 # -*- coding= utf-8 -*-
 
-__time__ = "2024/07/29"
-__author__ = "虎小黑"
-
-
 import inspect
 from pydantic import BaseModel
 from redis.asyncio import Redis
-from orm.orm_model import ORMModel
+from rorm.orm_model import ORMModel
 from typing import Awaitable, Callable, Type, TypeVar, get_args
 
 T = TypeVar("T", bound=ORMModel)
